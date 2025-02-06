@@ -1,9 +1,9 @@
-.homeContainer {
-    max-width:80%;
+.empleadosContainer {
+    max-width: 80%;
     margin: 0 auto;
     text-align: center;
 }
 
-.homeContainer h2 {
+.empleadosContainer h2 {
     margin-top: 10%;
 }
