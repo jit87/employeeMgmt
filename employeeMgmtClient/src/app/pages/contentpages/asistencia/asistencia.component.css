@@ -2,8 +2,27 @@
     max-width: 80%;
     margin: 0 auto;
     text-align: center;
-}
-
-.asistenciaContainer h2 {
     margin-top: 10%;
 }
+
+
+.date,.timer {
+    font-weight: 600;
+}
+
+.cajaTiempo{
+    border-color: black 1px;
+}
+
+
+
+.cajaTiempo ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+.cajaTiempo {
+    display: inline-block;
+}
+
