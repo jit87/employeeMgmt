@@ -6,11 +6,12 @@
 }
 
 
-.date,.timer {
+.date,
+.timer {
     font-weight: 600;
 }
 
-.cajaTiempo{
+.cajaTiempo {
     border-color: black 1px;
 }
 
@@ -26,3 +27,6 @@
     display: inline-block;
 }
 
+.boton-desconectar {
+    margin-left: 5px;
+}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { map, share, Subscription, timer } from 'rxjs';
+import { Form, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-asistencia',
@@ -8,10 +9,10 @@ import { map, share, Subscription, timer } from 'rxjs';
 })
 export class AsistenciaComponent {
 
-  public horaActual: number; 
+  public horaActual: number;
 
   constructor() {
-    this.horaActual = 0; 
+    this.horaActual = 0;
   }
 
 
@@ -35,6 +36,19 @@ export class AsistenciaComponent {
         this.rxTime = time;
       });
   }
+
+
+
+  fichar(time: any) {
+    console.log("Hora: ", time);
+  }
+
+
+  desconectar(time: any) {
+    console.log("Hora: ", time);
+  }
+
+
 
   ngOnDestroy() {
     clearInterval(this.intervalId);

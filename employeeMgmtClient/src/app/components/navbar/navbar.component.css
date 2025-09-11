@@ -2,11 +2,11 @@
     font-weight: 600;
 }
 
-.navbar{
+.navbar {
     background-color: burlywood;
 }
 
-.container-fluid{
+.container-fluid {
     max-width: 60%;
     margin: 0 auto;
 }
@@ -21,7 +21,7 @@ li {
 }
 
 
-.navbar-toggler:hover .navbar-toggler-icon:hover, .fa-solid:hover {
+.navbar-toggler:hover .navbar-toggler-icon:hover,
+.fa-solid:hover {
     filter: brightness(1.2);
 }
-

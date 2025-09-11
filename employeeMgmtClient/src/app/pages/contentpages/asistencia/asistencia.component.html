@@ -1,10 +1,10 @@
 <div class="asistenciaContainer">
-      <div class="cajaTiempo">  
+    <div class="cajaTiempo">
         <ul>
             <h2>Asistencia</h2>
         </ul>
         <ul class="tabla-hora">
-              
+
             <li>
                 <label>Hora:</label>
             </li>
@@ -19,16 +19,21 @@
             </li>
             &nbsp;
             <li>
-                 <div class="date"> {{ rxTime | date: 'dd-MM-yyyy' }}</div> 
+                <div class="date"> {{ rxTime | date: 'dd-MM-yyyy' }}</div>
             </li>
         </ul>
         <ul>
             <li>
-                    <form action="#" method="post">
-                        <input type="submit" value="Fichar">
-                    </form>
+                <form class="boton-fichar" (ngSubmit)="fichar(rxTime)">
+                    <input type="submit" value="Fichar">
+                </form>
+            </li>
+            <li>
+                <form class="boton-desconectar" (ngSubmit)="desconectar(rxTime)">
+                    <input type="submit" value="Desconectar">
+                </form>
             </li>
         </ul>
-      </div>  
+    </div>
     <br>
 </div>
