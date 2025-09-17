@@ -40,7 +40,8 @@ export const routes: Routes = [
     },
     {
         path: '**',
-        component: HomeComponent, pathMatch: 'full'
+        component: HomeComponent, pathMatch: 'full',
+        canActivate: [AuthGuard]
     }
 ];
 
