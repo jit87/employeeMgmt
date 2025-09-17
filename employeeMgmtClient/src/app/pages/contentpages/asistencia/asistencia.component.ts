@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { map, share, Subscription, timer } from 'rxjs';
 import { Form, NgForm } from '@angular/forms';
+import { AbstractAsistenciaService } from '../../../abstracts/AbstractAsistenciaService';
 
 @Component({
   selector: 'app-asistencia',
@@ -11,7 +12,7 @@ export class AsistenciaComponent {
 
   public horaActual: number;
 
-  constructor() {
+  constructor(private _asistenciaService: AbstractAsistenciaService) {
     this.horaActual = 0;
   }
 
@@ -41,6 +42,14 @@ export class AsistenciaComponent {
 
   fichar(time: any) {
     console.log("Hora: ", time);
+    this._asistenciaService.setEntrada().subscribe(
+      {
+        next: (resp) => {
+          console.log(resp);
+        },
+        error: (error) => console.error(error)
+      }
+    )
   }
 
 

@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import authRoutes from './routes/authRoutes.js';
 
 //Inicializa la aplicación de Express
 const app = express();
@@ -18,7 +19,7 @@ app.use(cors(corsOptions));
 
 //Rutas
 //Registra el enrutador para la ruta de autenticación 
-//app.use('/', authRoutes);
+app.use('/', authRoutes);
 
 
 
