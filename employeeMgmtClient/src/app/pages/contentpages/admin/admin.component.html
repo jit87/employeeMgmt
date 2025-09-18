@@ -1,130 +1,99 @@
-<!DOCTYPE html>
-<html lang="es">
+<div class="adminContainer">
+    <h1 class="titulo">Panel de Control - Administrador</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard Jefe - Empleados</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body class="bg-light">
-    <div class="container my-4">
-
-        <h1 class="mb-4">Panel de Control - Jefe</h1>
-
-        <!-- Resumen -->
-        <section class="mb-5">
-            <h2 class="h4">Resumen de Asistencia</h2>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <div class="card p-3">
-                        <h3 class="h6">Total empleados</h3>
-                        <p class="fs-4">50</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card p-3">
-                        <h3 class="h6">En la oficina</h3>
-                        <p class="fs-4">32</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card p-3">
-                        <h3 class="h6">Fuera de la oficina</h3>
-                        <p class="fs-4">18</p>
-                    </div>
-                </div>
+    <!-- Resumen -->
+    <section class="resumen">
+        <div class="tituloAdmin">
+            <h3>Resumen de Asistencia</h3>
+        </div>
+        <div class="empContainer">
+            <div class="totalEmp">
+                <h6>Total empleados</h6>
+                <p class="numero">50</p>
             </div>
-        </section>
+            <div class="oficinaEmp">
+                <h6>En la oficina</h6>
+                <p class="numero">32</p>
+            </div>
+            <div class="fueraEmp">
+                <h6>Fuera de la oficina</h6>
+                <p class="numero">18</p>
+            </div>
+        </div>
 
-        <!-- Empleados fichados -->
-        <section class="mb-5">
-            <h2 class="h4">Empleados fichados</h2>
-            <input type="text" class="form-control mb-3" placeholder="Buscar empleado...">
-            <table class="table table-striped">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Último fichaje</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Juan Pérez</td>
-                        <td>11/09/2025 08:55</td>
-                        <td><span class="badge bg-success">Dentro</span></td>
-                    </tr>
-                    <tr>
-                        <td>Ana Gómez</td>
-                        <td>11/09/2025 09:10</td>
-                        <td><span class="badge bg-danger">Fuera</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+    </section>
 
-        <!-- Gestión de Roles -->
-        <section class="mb-5">
-            <h2 class="h4">Gestión de Roles</h2>
-            <table class="table table-hover">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Rol</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Juan Pérez</td>
-                        <td>
-                            <select class="form-select">
-                                <option value="empleado">Empleado</option>
-                                <option value="admin">Admin</option>
-                            </select>
-                        </td>
-                        <td><button class="btn btn-primary btn-sm">Guardar</button></td>
-                    </tr>
-                    <tr>
-                        <td>Ana Gómez</td>
-                        <td>
-                            <select class="form-select">
-                                <option value="empleado" selected>Empleado</option>
-                                <option value="admin">Admin</option>
-                            </select>
-                        </td>
-                        <td><button class="btn btn-primary btn-sm">Guardar</button></td>
-                    </tr>
-                    <tr>
-                        <td>Carlos Ruiz</td>
-                        <td>
-                            <select class="form-select">
-                                <option value="empleado">Empleado</option>
-                                <option value="admin" selected>Admin</option>
-                            </select>
-                        </td>
-                        <td><button class="btn btn-primary btn-sm">Guardar</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+    <!-- Empleados fichados -->
+    <section class="fichados">
+        <h3>Empleados fichados</h3>
+        <input type="text" placeholder="Buscar empleado...">
+        <table border="1" class="tablaFichados">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Último fichaje</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Juan Pérez</td>
+                    <td>11/09/2025 08:55</td>
+                    <td>Dentro</td>
+                </tr>
+                <tr>
+                    <td>Ana Gómez</td>
+                    <td>11/09/2025 09:10</td>
+                    <td>Fuera</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-        <!-- Últimos fichajes -->
-        <section>
-            <h2 class="h4">Últimos fichajes</h2>
-            <ul class="list-group">
-                <li class="list-group-item">Juan Pérez → Entrada (11/09/2025 08:55)</li>
-                <li class="list-group-item">Ana Gómez → Salida (11/09/2025 09:10)</li>
-                <li class="list-group-item">Carlos Ruiz → Entrada (11/09/2025 09:15)</li>
-            </ul>
-        </section>
+    <!-- Gestión de Roles -->
+    <section class="roles">
+        <h3>Gestión de Roles</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Rol</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Juan Pérez</td>
+                    <td>
+                        <select>
+                            <option value="empleado">Empleado</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </td>
+                    <td><button>Guardar</button></td>
+                </tr>
+                <tr>
+                    <td>Ana Gómez</td>
+                    <td>
+                        <select>
+                            <option value="empleado" selected>Empleado</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </td>
+                    <td><button>Guardar</button></td>
+                </tr>
+                <tr>
+                    <td>Carlos Ruiz</td>
+                    <td>
+                        <select>
+                            <option value="empleado">Empleado</option>
+                            <option value="admin" selected>Admin</option>
+                        </select>
+                    </td>
+                    <td><button>Guardar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-    </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+</div>

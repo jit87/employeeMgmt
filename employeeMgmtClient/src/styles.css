@@ -1,5 +1,3 @@
-
-
 body {
     position: relative;
     background-color: rgb(236, 238, 239);
@@ -17,3 +15,79 @@ footer {
     padding: 10px 0;
 }
 
+
+
+/*****PAGES*******/
+/*  ADMIN    */
+.adminContainer {
+    margin-top: 50px;
+    margin-bottom: 150px;
+    padding: 50px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+}
+
+
+.resumen {
+    width: 100%;
+}
+
+
+.empContainer {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-between;
+}
+
+
+.totalEmp {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 32%;
+    padding: 10px;
+    background-color: white;
+}
+
+
+.oficinaEmp {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    width: 32%;
+    background-color: white;
+}
+
+
+.fueraEmp {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    width: 32%;
+    background-color: white;
+}
+
+
+.empContainer .numero {
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+.fichados {
+    margin-top: 50px;
+}
+
+
+
+.roles {
+    margin-top: 50px;
+}
+
+
+/*   ASISTENCIA   */
+.boton-desconectar {
+    margin-left: 5px;
+}
