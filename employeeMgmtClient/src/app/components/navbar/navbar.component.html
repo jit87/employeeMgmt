@@ -24,11 +24,14 @@
                 <li class="nav-item" routerLink="/noticias" routerLinkActive="router-link-active">
                     <a class="nav-link">Noticias</a>
                 </li>
+                <li class="nav-item" routerLink="/admin" routerLinkActive="router-link-active">
+                    <a class="nav-link">Administrador</a>
+                </li>
             </ul>
             <!-- Botón "Salir" a la derecha -->
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="cursor: pointer;">
+                    <a class="nav-link" href="#" style="cursor: pointer;" (click)="logout()">
                         <i class="fa-solid fa-power-off" style="color:rgba(0, 123, 255, 1);"></i>&nbsp;Salir
                     </a>
                 </li>

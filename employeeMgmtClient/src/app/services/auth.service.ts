@@ -9,7 +9,7 @@ import { BehaviorSubject, catchError, Observable, tap, throwError } from 'rxjs';
 })
 export class AuthService extends AbstractAuthService {
 
-  public authUrl = 'http://localhost:4000'; //Esta URL tiene que coincidir con la que tenemos configurada en el backend en index.js: en la función app.listen(4000, () => {})
+  public override authUrl = 'http://localhost:4000'; //Esta URL tiene que coincidir con la que tenemos configurada en el backend en index.js: en la función app.listen(4000, () => {})
   private tokenKey = 'auth-token';
 
   private authStatus = new BehaviorSubject<boolean>(this.isLoggedIn());
@@ -50,6 +50,7 @@ export class AuthService extends AbstractAuthService {
 
   }
 
+
   registro(nombre: string, email: string, password: string): Observable<any> {
     return this.http.post<any>(`${this.authUrl}/registro`, {
       nombre,
@@ -75,6 +76,8 @@ export class AuthService extends AbstractAuthService {
   }
 
 
+
+
   //CONSULTAS
   getToken(): string | null {
     return localStorage.getItem(this.tokenKey);
@@ -85,9 +88,13 @@ export class AuthService extends AbstractAuthService {
     return !!this.getToken();
   }
 
+
   isLoggedIn(): boolean {
     return !!localStorage.getItem('auth-token');
   }
+
+
+
 
 
 }

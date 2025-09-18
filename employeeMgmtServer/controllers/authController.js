@@ -5,10 +5,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-
-
 export async function registro(req, res) {
-    const { nombre, email, password, rol } = req.body;
+    const { nombre, email, password } = req.body;
 
     try {
         //Verifica si el usuario ya existe
@@ -26,7 +24,7 @@ export async function registro(req, res) {
             nombre,
             email,
             password: hashedPassword,
-            rol
+            rol: 'usuario'
         });
 
         //Guarda el usuario en la base de datos
@@ -39,7 +37,7 @@ export async function registro(req, res) {
 
 
 export async function login(req, res) {
-    const { email, password } = req.body;
+    const { email, password, rol } = req.body;
 
     try {
         //Verifica si el usuario existe
@@ -54,9 +52,22 @@ export async function login(req, res) {
             return res.status(400).send('Contraseña incorrecta.');
         }
 
+        //Verifica rol 
+        if (rol != user.rol) {
+            return res.status(400).send('Rol incorrecto.');
+        }
+
         //Genera y envia el token JWT
-        const generatedToken = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET, { expiresIn: '1h' });
-        res.json({ token: generatedToken });
+        const generatedToken = jwt.sign({ _id: user._id, rol: user.rol }, process.env.TOKEN_SECRET, { expiresIn: '1h' });
+        res.json({
+            token: generatedToken,
+            user: {
+                id: user._id,
+                nombre: user.nombre,
+                email: user.email,
+                rol: user.rol
+            }
+        });
     } catch (err) {
         res.status(500).send('Error en el servidor.');
     }
