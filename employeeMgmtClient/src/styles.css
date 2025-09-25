@@ -1,3 +1,11 @@
+/** VARIABLES **/
+:root {
+    --color-verde-oliva: darkolivegreen;
+}
+
+
+/** ESTILOS GENERALES **/
+
 body {
     position: relative;
     background-color: rgb(236, 238, 239);
@@ -9,16 +17,37 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: darkolivegreen;
+    background-color: var(--color-verde-oliva);
     color: white;
     text-align: center;
     padding: 10px 0;
 }
 
+table {
+    margin-top: 10px;
+    border-radius: 10px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+button,
+input[type="submit"] {
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    color: white;
+    background-color: var(--color-verde-oliva);
+    transition: 300ms;
+}
 
 
-/*****PAGES*******/
-/*  ADMIN    */
+
+/** PAGES **/
+/*  ADMIN  */
 .adminContainer {
     margin-top: 50px;
     margin-bottom: 150px;
@@ -80,14 +109,61 @@ footer {
     margin-top: 50px;
 }
 
+.fichados tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    padding: 15px;
+}
 
 
 .roles {
     margin-top: 50px;
 }
 
+.roles tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    padding: 15px;
+    border-radius: 5px;
+}
 
-/*   ASISTENCIA   */
+
+/* ASISTENCIA  */
 .boton-desconectar {
     margin-left: 5px;
+}
+
+.asistenciaContainer {
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10%;
+}
+
+
+.date,
+.timer {
+    font-weight: 600;
+}
+
+.cajaTiempo {
+    border-color: black 1px;
+}
+
+
+
+.cajaTiempo ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+.cajaTiempo {
+    display: inline-block;
 }
