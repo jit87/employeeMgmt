@@ -3,14 +3,11 @@
     --color-verde-oliva: darkolivegreen;
 }
 
-
 /** ESTILOS GENERALES **/
-
 body {
     position: relative;
     background-color: rgb(236, 238, 239);
 }
-
 
 footer {
     position: fixed;
@@ -35,6 +32,8 @@ button,
 input[type="submit"] {
     background-color: transparent;
     border-radius: 5px;
+    border: 1px solid darkgrey;
+    cursor: pointer;
 }
 
 button:hover,
@@ -44,108 +43,99 @@ input[type="submit"]:hover {
     transition: 300ms;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
 
+/** NAVBAR **/
+#navbar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar li {
+    margin-left: 10px;
+    padding: 20px;
+}
+
+.logo {
+    padding: 20px;
+}
+
+.nav-mobile {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+}
 
 /** PAGES **/
-/*  ADMIN  */
 .adminContainer {
-    margin-top: 50px;
-    margin-bottom: 150px;
+    margin: 50px auto 150px;
     padding: 50px;
     border: 1px solid black;
     border-radius: 5px;
     background-color: white;
 }
 
-
 .resumen {
     width: 100%;
 }
-
 
 .empContainer {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     justify-content: space-between;
+    gap: 10px;
 }
 
-
-.totalEmp {
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 32%;
-    padding: 10px;
-    background-color: white;
-}
-
-
-.oficinaEmp {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 10px;
-    width: 32%;
-    background-color: white;
-}
-
-
+.totalEmp,
+.oficinaEmp,
 .fueraEmp {
     border: 1px solid black;
     border-radius: 5px;
-    padding: 10px;
     width: 32%;
+    padding: 10px;
     background-color: white;
 }
 
-
 .empContainer .numero {
     font-size: larger;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
 }
 
-
-
-.fichados {
-    margin-top: 50px;
-}
-
-.fichados tbody,
-td,
-tfoot,
-th,
-thead,
-tr {
-    padding: 15px;
-}
-
-
+.fichados,
 .roles {
     margin-top: 50px;
 }
 
-.roles tbody,
-td,
-tfoot,
-th,
-thead,
-tr {
+.fichados td,
+.roles td {
     padding: 15px;
-    border-radius: 5px;
 }
 
-
-/* ASISTENCIA  */
+/* ASISTENCIA */
 .boton-desconectar {
     margin-left: 5px;
 }
 
 .asistenciaContainer {
     max-width: 80%;
-    margin: 0 auto;
+    margin: 10% auto 0;
     text-align: center;
-    margin-top: 10%;
 }
-
 
 .date,
 .timer {
@@ -153,17 +143,43 @@ tr {
 }
 
 .cajaTiempo {
-    border-color: black 1px;
+    display: inline-block;
 }
-
-
 
 .cajaTiempo ul {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-.cajaTiempo {
-    display: inline-block;
+/** RESPONSIVE **/
+@media (max-width: 991.98px) {
+    #navbar ul {
+        flex-direction: column;
+        background-color: darkgrey;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-out;
+    }
+
+    #navbar li {
+        border-bottom: 1px solid black;
+        margin: 0;
+        padding: 10px;
+    }
+
+    #navbar li:last-child {
+        border-bottom: none;
+        margin-top: 10px;
+    }
+
+    .nav-mobile {
+        display: inline-block;
+    }
+
+    #menu:target {
+        max-height: 500px;
+    }
 }

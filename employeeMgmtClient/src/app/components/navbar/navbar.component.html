@@ -1,37 +1,30 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">EmployeeMgmt</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav" *ngIf="autenticado">
-            <!-- Menú a la izquierda -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="/home"
-                        routerLinkActive="router-link-active">Inicio</a>
+<nav>
+    <div id="navbar">
+        <div *ngIf="autenticado" class="listaNavLinks">
+            <a href="#" class="logo">EmployeeMgmt</a>
+            <a href="#menu" class="nav-mobile">☰</a>
+            <a href="#" class="nav-mobile close">✖</a>
+            <ul id="menu">
+                <li>
+                    <a routerLink="/home" routerLinkActive="router-link-active" href="#Inicio">Inicio</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink='/empleados' routerLinkActive="router-link-active">Empleados</a>
+                <li>
+                    <a routerLink="/empleados" routerLinkActive="router-link-active">Empleados</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/asistencia" routerLinkActive="router-link-active">Asistencia</a>
+                <li>
+                    <a routerLink="/asistencia" routerLinkActive="router-link-active">Asistencia</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/peticiones" routerLinkActive="router-link-active">Peticiones</a>
+                <li>
+                    <a routerLink="/peticiones" routerLinkActive="router-link-active">Peticiones</a>
                 </li>
-                <li class="nav-item" routerLink="/noticias" routerLinkActive="router-link-active">
-                    <a class="nav-link">Noticias</a>
+                <li>
+                    <a routerLink="/noticias" routerLinkActive="router-link-active">Noticias</a>
                 </li>
-                <li class="nav-item" routerLink="/admin" routerLinkActive="router-link-active">
-                    <a class="nav-link">Administrador</a>
+                <li>
+                    <a routerLink="/admin" routerLinkActive="router-link-active">Administrador</a>
                 </li>
-            </ul>
-            <!-- Botón "Salir" a la derecha -->
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="cursor: pointer;" (click)="logout()">
+                <li class="btn-salir">
+                    <a style="cursor: pointer;" (click)="logout()">
                         <i class="fa-solid fa-power-off" style="color:rgba(0, 123, 255, 1);"></i>&nbsp;Salir
                     </a>
                 </li>
