@@ -2,26 +2,27 @@
     <div id="navbar">
         <div *ngIf="autenticado" class="listaNavLinks">
             <a href="#" class="logo">EmployeeMgmt</a>
-            <a href="#menu" class="nav-mobile"><i class="fa-sharp fa-solid fa-bars"></i></a>
-            <a href="#close" class="nav-mobile close">x</a>
-            <ul id="menu">
+            <a class="nav-mobile" (click)="toggleMenu()"><i class="fa-sharp fa-solid fa-bars"
+                    [class.fa-fade]="menuAbierto"></i></a>
+            <a class="close">x</a>
+            <ul id="menu" [class.menu-abierto]="menuAbierto">
                 <li>
-                    <a routerLink="/home" routerLinkActive="router-link-active" href="#Inicio">Inicio</a>
+                    <p routerLink="/home" routerLinkActive="router-link-active" href="#Inicio">Inicio</p>
                 </li>
                 <li>
-                    <a routerLink="/empleados" routerLinkActive="router-link-active">Empleados</a>
+                    <p routerLink="/empleados" routerLinkActive="router-link-active">Empleados</p>
                 </li>
                 <li>
-                    <a routerLink="/asistencia" routerLinkActive="router-link-active">Asistencia</a>
+                    <p routerLink="/asistencia" routerLinkActive="router-link-active">Asistencia</p>
                 </li>
                 <li>
-                    <a routerLink="/peticiones" routerLinkActive="router-link-active">Peticiones</a>
+                    <p routerLink="/peticiones" routerLinkActive="router-link-active">Peticiones</p>
                 </li>
                 <li>
-                    <a routerLink="/noticias" routerLinkActive="router-link-active">Noticias</a>
+                    <p routerLink="/noticias" routerLinkActive="router-link-active">Noticias</p>
                 </li>
                 <li>
-                    <a routerLink="/admin" routerLinkActive="router-link-active">Administrador</a>
+                    <p routerLink="/admin" routerLinkActive="router-link-active">Administrador</p>
                 </li>
                 <li class="btn-salir">
                     <a style="cursor: pointer;" (click)="logout()">

@@ -95,6 +95,10 @@ input[type="submit"]:hover {
     padding: 10px;
 }
 
+.close {
+    display: none;
+}
+
 #navbar a {
     text-decoration: none;
     color: black;
@@ -102,6 +106,18 @@ input[type="submit"]:hover {
 
 
 /** PAGES **/
+/* HOME */
+.homeContainer {
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.homeContainer h2 {
+    margin-top: 10%;
+}
+
 /* ADMIN */
 .adminContainer {
     margin: 50px auto 150px;
@@ -188,6 +204,15 @@ input[type="submit"]:hover {
         float: none;
     }
 
+    .nav-mobile {
+        display: inline-block;
+    }
+
+    .close {
+        display: none;
+    }
+
+
     #navbar ul {
         flex-direction: column;
         overflow: hidden;
@@ -197,37 +222,34 @@ input[type="submit"]:hover {
         font-weight: bold;
     }
 
-    #navbar li {
-        border-bottom: 1px solid black;
-        margin: 0;
-        padding: 10px;
+    #navbar ul.menu-abierto {
+        max-height: max-content;
     }
 
-    #navbar li:last-child {
+    #navbar li {
+        padding: 0px;
+        padding: 5px;
+    }
+
+    #navbar ul li {
+        border-bottom: 1px solid black;
+        margin-top: 0 auto;
+        padding: none;
+        margin-left: 0px;
+        padding-left: 8px;
+    }
+
+    #navbar ul li:last-child {
         border-bottom: none;
     }
 
-    .nav-mobile {
-        display: inline-block;
-    }
-
-    #close {
-        display: none;
-    }
-
-    #menu:target {
-        max-height: 500px;
-    }
-
-    a {
-        color: black;
-    }
-
-    #navbar li:hover {
+    #navbar ul li:hover {
         background-color: var(--color-verde-azulado);
         transition: 300ms;
-        color: white !important;
+        color: bisque;
     }
+
+
 
 
 }

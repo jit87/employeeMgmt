@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { AbstractAuthService } from '../../abstracts/AbstractAuthService';
 
 @Component({
@@ -10,6 +10,9 @@ export class NavbarComponent {
 
   autenticado: boolean | any = false;
   isAuthenticated: boolean = false;
+  menuAbierto: boolean = false;
+
+
 
   constructor(private _authService: AbstractAuthService) {
     if (this._authService.isAuthenticated()) {
@@ -24,6 +27,10 @@ export class NavbarComponent {
     //Eliminamos los datos guardados en el navegador
     localStorage.removeItem("email");
     localStorage.removeItem("auth-token");
+  }
+
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
   }
 
 
