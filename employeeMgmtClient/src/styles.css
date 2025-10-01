@@ -1,7 +1,9 @@
 /** VARIABLES **/
 :root {
-    --color-verde-oliva: darkolivegreen;
+    --color-verde-azulado: rgba(75, 149, 179, 1);
+    --gradiente-verde-azul: linear-gradient(90deg, rgba(75, 149, 179, 1) 0%, rgba(87, 199, 133, 1) 50%);
 }
+
 
 /** ESTILOS GENERALES **/
 body {
@@ -14,10 +16,15 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: var(--color-verde-oliva);
-    color: white;
+    /*background-color: var(--color-verde-oliva);*/
     text-align: center;
-    padding: 10px 0;
+    padding: 50px;
+    background: var(--gradiente-verde-azul);
+}
+
+footer p,
+footer a {
+    color: black;
 }
 
 table {
@@ -39,22 +46,25 @@ input[type="submit"] {
 button:hover,
 input[type="submit"]:hover {
     color: white;
-    background-color: var(--color-verde-oliva);
+    background-color: var(--color-verde-azulado);
     transition: 300ms;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
 
 /** NAVBAR **/
+.listaNavLinks {
+    width: -webkit-fill-available;
+    margin-left: 25%;
+}
+
 #navbar {
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    position: sticky;
 }
 
 #navbar ul {
@@ -71,6 +81,11 @@ a {
 
 .logo {
     padding: 20px;
+    float: inline-start;
+    font-weight: 800;
+    font-family: 'roboto';
+    font-size: larger;
+    color: var(--color-verde-azulad);
 }
 
 .nav-mobile {
@@ -80,7 +95,14 @@ a {
     padding: 10px;
 }
 
+#navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+
 /** PAGES **/
+/* ADMIN */
 .adminContainer {
     margin: 50px auto 150px;
     padding: 50px;
@@ -154,14 +176,25 @@ a {
     margin: 0;
 }
 
+
 /** RESPONSIVE **/
 @media (max-width: 991.98px) {
+
+    .listaNavLinks {
+        margin-left: 0;
+    }
+
+    .logo {
+        float: none;
+    }
+
     #navbar ul {
         flex-direction: column;
-        background-color: darkgrey;
         overflow: hidden;
         max-height: 0;
         transition: max-height 0.3s ease-out;
+        background: var(--gradiente-verde-azul);
+        font-weight: bold;
     }
 
     #navbar li {
@@ -172,14 +205,29 @@ a {
 
     #navbar li:last-child {
         border-bottom: none;
-        margin-top: 10px;
     }
 
     .nav-mobile {
         display: inline-block;
     }
 
+    #close {
+        display: none;
+    }
+
     #menu:target {
         max-height: 500px;
     }
+
+    a {
+        color: black;
+    }
+
+    #navbar li:hover {
+        background-color: var(--color-verde-azulado);
+        transition: 300ms;
+        color: white !important;
+    }
+
+
 }

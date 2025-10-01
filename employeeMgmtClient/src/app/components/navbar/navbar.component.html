@@ -2,8 +2,8 @@
     <div id="navbar">
         <div *ngIf="autenticado" class="listaNavLinks">
             <a href="#" class="logo">EmployeeMgmt</a>
-            <a href="#menu" class="nav-mobile">☰</a>
-            <a href="#" class="nav-mobile close">✖</a>
+            <a href="#menu" class="nav-mobile"><i class="fa-sharp fa-solid fa-bars"></i></a>
+            <a href="#close" class="nav-mobile close">x</a>
             <ul id="menu">
                 <li>
                     <a routerLink="/home" routerLinkActive="router-link-active" href="#Inicio">Inicio</a>
@@ -25,7 +25,7 @@
                 </li>
                 <li class="btn-salir">
                     <a style="cursor: pointer;" (click)="logout()">
-                        <i class="fa-solid fa-power-off" style="color:rgba(0, 123, 255, 1);"></i>&nbsp;Salir
+                        Salir
                     </a>
                 </li>
             </ul>
