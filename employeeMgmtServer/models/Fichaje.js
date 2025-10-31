@@ -2,9 +2,13 @@ import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 
 const FichajeSchema = new mongoose.Schema({
+    _id: { type: String, required: true },
+    _idUsuario: { type: String, required: true },
     nombre: { type: String, required: true },
     email: { type: String, required: true, unique: true },
-    timestamp: { type: String, required: true }
+    entrada: { type: Date },
+    salida: { type: Date },
+    fecha: { type: String }
 });
 
 userSchema.methods.comparePassword = function (password) {
